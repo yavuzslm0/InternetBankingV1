@@ -1,0 +1,111 @@
+/* ---- Converter ---- */
+.converter-container {
+  max-width: 500px;
+  padding: 35px;
+  margin: 110px auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.converter-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ca0916;
+  letter-spacing: 0.5px;
+  text-align: center;
+  margin: auto;
+}
+
+/* ---- Input ---- */
+.converter-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d3d7;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.converter-input:focus {
+  border-color: #ca0916;
+  box-shadow: 0 0 0 1px rgba(202, 9, 22, 0.058);
+}
+
+/* input’taki yukarı–aşağı okları gizle */
+.converter-input::-webkit-outer-spin-button,
+.converter-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* ---- Select Group ---- */
+.converter-select-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* selectler arası boşluk */
+  width: 100%;
+}
+
+.converter-select {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d3d7;
+  font-size: 15px;
+  cursor: pointer;
+  background: #fff;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.converter-select:focus {
+  border-color: #ca0916;
+  box-shadow: 0 0 0 1px rgba(202, 9, 22, 0.058);
+}
+
+.converter-arrow {
+  font-size: 30px;
+  font-weight: bold;
+  color:#575b63;
+  margin: 0 5px;
+}
+
+/* ---- Button (role button stiliyle aynı) ---- */
+.converter-button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px; /* admin role button’dan biraz daha büyük */
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 18px;
+  background: linear-gradient(100deg, #e80716, #ca0916);
+  color: #fff;
+  transition: background 0.3s ease, color 0.2s ease, transform 0.3s ease;
+}
+
+.converter-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  background: rgba(200, 16, 47, 0.136);
+  color: #c81010;
+}
+
+/* ---- Result ---- */
+.converter-result {
+  margin-top: auto;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  background: #fef3f2;
+  padding: 10px 15px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #ddc6c6;
+
+}

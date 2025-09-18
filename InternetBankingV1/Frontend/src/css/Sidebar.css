@@ -1,0 +1,118 @@
+.sidebar {
+  width: 230px;
+  min-width: 230px;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  padding: 16px 12px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  transition: width 0.3s ease, min-width 0.3s ease;
+}
+
+/* Aç/Kapat butonu */
+.sidebar-btn {
+  width: 100%;
+  color: white;
+  background: linear-gradient(100deg, #e80716, #ca0916);
+  border: none;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px; 
+  transition: background 0.4s ease, color 0.4s ease, transform 0.3s ease;
+}
+
+.sidebar-btn:hover {
+  background: rgba(200, 16, 47, 0.136);
+  color: #c81010;
+  transform: scale(1.02);  /* hafif büyüme + yukarı kayma */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.121);  /* gölge efekti */
+}
+
+.sidebar-btn:active {
+  transform: scale(0.99); /* tıklayınca basılma efekti */
+}
+
+.sidebar-btn.collapsed {
+  width: 100%;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.btn-text {
+  font-size: 16px;
+}
+
+.sidebar--collapsed {
+  width: 84px;
+  min-width: 84px;
+}
+
+.sidebar--collapsed .nav{
+  gap: 6px;
+}
+
+.sidebar--collapsed .nav-item {
+  justify-content: center;   /* yatay ortalama */
+  align-items: center;
+  padding: 10px 0;   
+  gap: 0;        /* sola boşluk kalksın */
+}
+
+.sidebar--collapsed .nav-icon {
+  margin: 0 auto;  
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar--collapsed .nav-label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #111827;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #f3f4f6;
+  color: var(--ziraat-red);
+  transform: translateX(3px); /* hafif sağa kayma */
+}
+
+.nav-item.active {
+  background: rgba(200, 16, 46, 0.12);
+  color: var(--ziraat-red);
+}
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+}
+.nav-label {
+  transition: opacity 0.3s ease;
+}

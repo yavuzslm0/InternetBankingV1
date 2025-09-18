@@ -1,0 +1,262 @@
+/* Font-Face */
+@font-face {
+  font-family: 'GothamNarrowBook';
+  src: url('/fonts/GothamNarrow-Book.woff2') format('woff2'),
+       url('/fonts/GothamNarrow-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root{
+  --ziraat-red:#db0514;
+  --ziraat-red-dark:#a90611;
+  --bg:#f4f5f7b8;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --radius:12px;
+  --shadow:0 6px 18px rgba(16,24,40,0.06);
+  --bg-image: url("/ziraat-tema.jpg"); /* arka plan resmini değişken olarak tanımladık */
+  --bg-opacity: 0.3; /* saydamlık */
+}
+
+*{box-sizing:border-box}
+
+html,body,#root{height:100%}
+
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'GothamNarrowBook', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  position: relative; /* overlay için gerekli */
+}
+
+body::before{
+  content:"";
+  position: fixed; /* sayfa kaydırılsa bile arka planda kalsın */
+  inset:0;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  opacity: var(--bg-opacity); /* saydamlık */
+  z-index: -1; /* içerik üstünde kalacak */
+  filter: blur(2px);
+}
+
+a{color:inherit;text-decoration:none}
+
+.container{
+  display:flex;
+  height:100%
+}
+
+button{
+  font-family: 'GothamNarrowBook', sans-serif;
+}
+
+/* Content */
+.content{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+  overflow:hidden
+}
+
+.main{ 
+  overflow:auto;
+  height:100%
+}
+
+/* Small fixes */
+.rates-grid{grid-template-columns:repeat(3, minmax(140px, 1fr));}
+.rates-grid .muted{white-space:nowrap;}
+
+
+
+.converter-icon {
+  font-size: 20px;
+}
+
+/* ===== 3) Auth Screens ===== */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/arka-plan.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.99);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.159);
+}
+
+.login-box .logo {
+  width: 110px;
+  margin-top: 10px;
+}
+
+.login-box input {
+  width: 94%;
+  padding: 10px;
+  margin: 9px 0px;
+  border: 1px solid #cccccc;
+  border-radius: 15px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #e10514;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 9px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #b40606;
+}
+
+.login-box input:focus {
+  outline: none;
+  border: 1px solid rgb(175, 175, 175);
+  box-shadow: 0 0 1px #5d5d5d6c;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/arka-plan.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.register-box {
+  background: rgba(255, 255, 255, 0.99);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.159);
+}
+
+.register-box .logo {
+  width: 110px;
+  margin-top: 10px;
+}
+
+.register-box input {
+  width: 94%;
+  padding: 10px;
+  margin: 9px 0px;
+  border: 1px solid #cccccc;
+  border-radius: 15px;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #e10514;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 9px;
+  font-size: 14px;
+  transition: background-color 0.4s ease;
+}
+
+.register-box button:hover {
+  background-color: #b40606;
+}
+
+.register-box input:focus {
+  outline: none;
+  border: 1px solid rgb(175, 175, 175);
+  box-shadow: 0 0 1px #5d5d5d6c;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+.reset-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/arka-plan.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.reset-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.159);
+}
+
+.reset-box input {
+  width: 94%;
+  padding: 10px;
+  margin: 10px -2px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.reset-box input:focus {
+  outline: none;
+  border: 1px solid rgb(175, 175, 175);
+  box-shadow: 0 0 1px #5d5d5d6c;
+}
+
+.reset-box button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 1px;
+  background-color: #e10514;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.reset-box button:hover {
+  background-color: #b40606;
+}
+
+.info-message {
+  font-size: 15px;
+  color: #8f0101;
+  margin-top: 20px;
+  margin-bottom: 1px;
+}
+
+
+

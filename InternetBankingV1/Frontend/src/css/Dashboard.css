@@ -1,0 +1,142 @@
+/* ———————————————————————————————
+   EKRAN YÜKSEKLİĞİ – navbar yüksekliğine göre ayarlama
+   İstersen burada varsayılanı değiştir: */
+:root{ --navbar-h: 84px; }  /* senin kırmızı üst bar ~80-90px civarı */
+
+/* ———————————————————————————————
+   TAM YÜKSEKLİK SLIDER KABI
+   - Sidebar + Navbar altında kalan alanı tamamen kaplar
+   - Dikey scroll’u engeller (içeride overflow yok) */   
+.dash3-viewport{
+  position: relative;
+  height: calc(100vh - var(--navbar-h));
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-image: url("/ziraat-tema.jpg");  /* resmini buraya koy */
+  background-size: cover;   /* resmi ekranı kaplayacak şekilde ölçekle */
+  background-position: center; /* ortala */
+  background-repeat: no-repeat; /* tekrar etmesin */
+}
+
+/* Ana görünüm penceresi (mask) */
+.dash3-mask{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Kaydırılan hat */
+.dash3-track{
+  display: flex;
+  height: 100%;
+  transition: transform .55s cubic-bezier(.22,.61,.36,1);
+  will-change: transform;
+}
+
+/* Her “sayfa” (3 kartlık set) %100 genişlik */
+.dash3-slide{
+  flex: 0 0 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* 3 sütun ızgara – dikeyde de tam yükseklik */
+.dash3-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  height: 100%;
+}
+
+/* KART – modern gölge ve köşe
+   (biri gri biri beyaz olacak şekilde .is-gray/.is-white) */
+.dash3-card{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.dash3-card.is-white{ background: #ffffffcc; }
+.dash3-card.is-gray { background: #f2f4f7c2; } /* açık gri */
+
+/* Başlık ve içerik */
+.dash3-card-head{ 
+  margin-bottom: 8px; 
+}
+.dash3-card-title{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.1px;
+}
+.dash3-card-body{
+  flex: 1 1 auto;
+  color: #374151;
+  line-height: 1.45;
+}
+
+/* Kart alt aksiyonları */
+.dash3-card-foot{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.dash3-btn{
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+.dash3-btn:hover{
+  background: #f2f4f7;
+}
+
+.dash3-btn--primary{
+  border-color: transparent;
+  color: #fff;
+  background: linear-gradient(100deg, #e80716, #ca0916);
+  transition: background 0.3s ease, color 0.2s ease, transform 0.3s ease;
+
+}
+.dash3-btn--primary:hover{ background: rgba(200, 16, 47, 0.136);
+  color: #c81010;
+  transform: scale(1.02);  /* hafif büyüme + yukarı kayma */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.121);  /* gölge efekti */}
+
+/* SAĞ/SOL OKLAR (icon-caret benzeri) */
+.dash3-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: #ffffff;
+  color: #c8102e;
+  font-size: 28px;
+  box-shadow: 0 8px 20px rgba(16,24,40,.12);
+  transition: transform .3s ease, box-shadow .2s ease, background .2s ease;
+  z-index: 3;
+}
+.dash3-nav:hover{
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 12px 28px rgba(16,24,40,.16);
+}
+
+.dash3-nav:disabled{
+  opacity: .35;
+  transform: translateY(-50%) scale(0.0);
+}
+.dash3-nav--left{  left: 8px; }
+.dash3-nav--right{ right: 8px; }

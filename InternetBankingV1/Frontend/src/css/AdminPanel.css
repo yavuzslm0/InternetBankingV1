@@ -1,0 +1,133 @@
+.admin-panel {
+  position: relative; /* overlay için gerekli */
+  padding: 20px;
+  height: 100%;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 2;
+}
+
+.admin-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; left:0; right:0; bottom:0 */
+  background-image: url("/ziraat-tema.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3; /* burada saydamlık ayarlanır, 0-1 arası */
+  z-index: 0; /* içeriğin altında kalması için */
+}
+
+/* panel içeriği için z-index */
+.admin-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.admin-panel h2 {
+  margin:  8px auto;
+  font-weight: 800;
+  letter-spacing: 0.1px;
+  color: #ca0916;
+  font-size: 25px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+.admin-error {
+  background: #fef3f2;
+  color: #b91c1c;
+  padding: 12px 16px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 17px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  margin: 250px auto;
+  max-width: 500px;
+}
+
+.admin-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 15px 40px;
+  text-align: left;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.admin-btn {
+  font-family: 'GothamNarrowBook', sans-serif;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-btn.delete {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  margin-right: 10px;
+  padding: 8px 20px;
+}
+
+.admin-btn.delete:hover {
+  background: #ecedee;
+}
+
+.admin-btn.role {
+  border-color: transparent;
+  background: linear-gradient(100deg, #e80716, #ca0916);
+  color: #fff;
+  transition: background 0.3s ease, color 0.2s ease, transform 0.3s ease;
+  padding: 8px 12px;
+}
+
+.admin-btn.role:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.121);
+  background: rgba(200, 16, 47, 0.136);
+  color: #c81010;
+}
+
+.admin-loading {
+  background: #fef3f2;
+  color: #b91c1c;
+  padding: 12px 16px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 17px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  margin: 250px 50px;
+}
+
+tr {
+  border: 2px solid #e5e7eb;
+}
+
+/* Satırların arka planını sırayla gri/beyaz yapar */
+.admin-table tbody tr:nth-child(odd) {
+  background-color: #f3f4f6;
+}
+
+.admin-table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+
